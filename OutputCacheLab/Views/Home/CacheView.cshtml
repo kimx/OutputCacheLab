@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>@ViewBag.Message</h1>
+<table style="border:1px solid gray">
+    <tr>
+        <td style="border:1px solid gray">
+            <h3><a href="Any">Any (Default)</a></h3>
+            <h5>Cache-Control:Public</h5>
+            <h5>StatusCode:304</h5>
+            <h5>快取來源:若Server回傳304(未更新)，則取Client的快取</h5>
+        </td>
+        <td style="border:1px solid gray">
+            <h3><a href="Servers">Server</a></h3>
+            <h5>Cache-Control:no-cache</h5>
+            <h5>StatusCode:200</h5>
+            <h5>快取來源:Server</h5>
+        </td>
+        <td style="border:1px solid gray">
+            <h3><a href="Client">Client</a></h3>
+            <h5>Cache-Control:Private</h5>
+            <h5>StatusCode:200</h5>
+            <h5>快取來源:Client</h5>
+        </td>
+        <td style="border:1px solid gray">
+            <h3><a href="ServerAndClient">ServerAndClient</a></h3>
+            <h5>Cache-Control:Private</h5>
+            <h5>StatusCode:304</h5>
+            <h5>快取來源:若Server回傳304(未更新)，則取Client的快取</h5>
+        </td>
+        <td style="border:1px solid gray">
+            <h3><a href="Downstream">Downstream</a></h3>
+            <h5>Cache-Control:Public</h5>
+            <h5>StatusCode:200</h5>
+            <h5>快取來源:Client</h5>
+        </td>
+    </tr>
+</table>
+
+
+<h3>關於快取在瀏覽器端的說明</h3>
+<h4>Private:電腦若不同的使用者登入，則在瀏覽器取不同快取</h4>
+<h4>Public:電腦若不同的使用者登入，則在瀏覽器取同一份快取</h4>
